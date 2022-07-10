@@ -1,0 +1,31 @@
+$cWhite: white;
+$cBlack: black;
+$cFooterBackGround: #61605C;
+$cPageTopButtonColor: #12897D;
+
+#footer {
+  color: $cWhite;
+  background-color: $cFooterBackGround;
+
+  display: block;
+  padding: 0;
+  margin: 120px 0 0 0;
+  
+  text-size-adjust: 100%;
+
+  & pageTopButton {
+    background-image: none;
+    background-color: $cPageTopButtonColor;
+
+    border-radius: 5px;
+    font-weight: 700;
+    line-height: 18.5714px;
+    
+    margin: 0;
+    padding: 10px 18px;
+  }
+  
+  & span.pageTop {
+    display: absolute
+  }
+}
