@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Faculty;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +25,7 @@ class StudentSeeder extends Seeder
         'last_name_kana' => 'ヒラヤマ',
         'first_name_kana' => 'タイキ',
         'email' => 'hirayama@dev',
-        'faculty_id' => 1,
+        'faculty_id' => Faculty::where('faculty_name', '情報学部')->first()->id,
         'password' => Hash::make('password123'),
         'created_at' => now(),
       ],
@@ -34,7 +35,7 @@ class StudentSeeder extends Seeder
         'last_name_kana' => 'ジョウホウ',
         'first_name_kana' => 'タロウ',
         'email' => 'joho@dev',
-        'faculty_id' => 1,
+        'faculty_id' => Faculty::where('faculty_name', '情報学部')->first()->id,
         'password' => Hash::make('password123'),
         'created_at' => now(),
       ],
@@ -44,7 +45,7 @@ class StudentSeeder extends Seeder
         'last_name_kana' => 'ジソウ',
         'first_name_kana' => 'ジロウ',
         'email' => 'jisou@dev',
-        'faculty_id' => 2,
+        'faculty_id' => Faculty::where('faculty_name', '事業創造学部')->first()->id,
         'password' => Hash::make('password123'),
         'created_at' => now(),
       ],
@@ -54,7 +55,7 @@ class StudentSeeder extends Seeder
         'last_name_kana' => 'アニメ',
         'first_name_kana' => 'ミタロウ',
         'email' => 'anime@dev',
-        'faculty_id' => 3,
+        'faculty_id' => Faculty::where('faculty_name', 'アニメ・マンガ学部')->first()->id,
         'password' => Hash::make('password123'),
         'created_at' => now(),
       ],

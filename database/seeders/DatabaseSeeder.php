@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
       CategorySeeder::class,
       StatusSeeder::class,
       StudentSeeder::class, // 開発用5アカウントだけ追加
-      TeacherSeeder::class, // 開発用教員アカウント
+      // TeacherSeeder::class, // 開発用教員アカウント
       // ImageSeeder::class,
     ]);
 
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 
     // Student::factory(Common::MAX_STUDENTS)->create();
     // Thread::factory(Common::MAX_THREADS)->create();
-    Comment::factory(CommonConstants::MAX_COMMENTS)->create();
+    // Comment::factory(CommonConstants::MAX_COMMENTS)->create();
     // Bookmark::factory(50)->create();
   }
 }

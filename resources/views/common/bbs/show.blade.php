@@ -146,10 +146,12 @@
                   action="{{ route('student.threads.comments.registerGoodComment', ['thread' => $thread->id, 'comment' => $comment->id]) }}"
                   method="POST">
                   @csrf
-                  <button type="submit">
+              
+                  <button type="submit">                    
                     <x-good-comment />
                   </button>
-                </form>
+                </form>    
+                <span class="mx-2 text-sm text-gray-700">{{ $comment->likes->count() }}人がこのコメントにいいねしました</span>
                 <a
                   href="{{ route('student.threads.comments.create-reply', ['thread' => $thread->id, 'comment' => $comment->id]) }}">
                   <span class="text-logout underline font-semibold">返信する</span></a>

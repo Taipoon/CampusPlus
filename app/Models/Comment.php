@@ -59,6 +59,14 @@ class Comment extends Model
     return $this->belongsToMany(Student::class, 'good_comments', 'user_id', 'comment_id');
   }
 
+  /**
+   * コメントに付与されたいいねの数をカウントするためのリレーション
+   */
+  public function likes()
+  {
+    return $this->hasMany(GoodComment::class);
+  }
+
   public function notifications()
   {
     return $this->hasMany(Notification::class, 'comment_id');

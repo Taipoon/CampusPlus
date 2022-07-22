@@ -171,7 +171,9 @@ class ThreadController extends Controller
     $secondary_category = SecondaryCategory::findOrFail($thread->secondary_category_id);
     $primary_category = PrimaryCategory::findOrFail($secondary_category->primary_category_id);
 
-    $comments = Comment::with('student', 'imageFirst')->where('thread_id', $id)->orderBy('created_at')->get();
+    $comments = Comment::with('student', 'imageFirst', 'likes')->where('thread_id', $id)->orderBy('created_at')->get();
+
+    $test_comments = Comment::where('thread_id', $id)->orderBy('created_at')->get();
 
     if ($thread->status_id == CommonConstants::REQUEST_FOR_ANSWER) {
       $tag = "【回答募集】";
