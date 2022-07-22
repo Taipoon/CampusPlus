@@ -93,7 +93,7 @@
                   {{ $comment->created_at->format('Y年m月d日 H:i:s') }}
                   ({{ $comment->created_at->diffForHumans() }}) <span class="hidden md:inline-block">ID :
                     {{ $comment->id }}</span>
-                </p>
+                </p> 
               </div>
             </div>
             <div class="mb-4 border-b-2 border-separator"></div>
@@ -146,12 +146,14 @@
                   action="{{ route('student.threads.comments.registerGoodComment', ['thread' => $thread->id, 'comment' => $comment->id]) }}"
                   method="POST">
                   @csrf
-              
+                  <div class="flex items-center">
                   <button type="submit">                    
                     <x-good-comment />
                   </button>
+                  <p class="mx-2 text-md text-gray-900">{{ $comment->likes->count() }}</p>
+                </div>
                 </form>    
-                <span class="mx-2 text-sm text-gray-700">{{ $comment->likes->count() }}人がこのコメントにいいねしました</span>
+               
                 <a
                   href="{{ route('student.threads.comments.create-reply', ['thread' => $thread->id, 'comment' => $comment->id]) }}">
                   <span class="text-logout underline font-semibold">返信する</span></a>

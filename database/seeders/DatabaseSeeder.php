@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
 
     // Student::factory(Common::MAX_STUDENTS)->create();
     // Thread::factory(Common::MAX_THREADS)->create();
-    // Comment::factory(CommonConstants::MAX_COMMENTS)->create();
+    Comment::factory(CommonConstants::MAX_COMMENTS)->create();
     // Bookmark::factory(50)->create();
   }
 }
