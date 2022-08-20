@@ -124,12 +124,12 @@
             <div class="flex mb-4">
               <label class="text-lg w-1/2 block" for="youtube">Youtube URL</label>
               <input type="text" class="w-1/2 bg-input-field border border-gray-500 shadow-inner focus:outline-none"
-                value="{{ old('youtube') ?? $student->github }}" id="youtube" name="youtube">
+                value="{{ old('youtube') ?? $student->youtube }}" id="youtube" name="youtube">
             </div>
             <div class="flex mb-4">
               <label class="text-lg w-1/2 block" for="url">Web Site URL</label>
               <input type="text" class="w-1/2 bg-input-field border border-gray-500 shadow-inner focus:outline-none"
-                value="{{ old('url') ?? $student->github }}" id="url" name="url">
+                value="{{ old('url') ?? $student->url }}" id="url" name="url">
             </div>
             <div class="flex mb-4">
               <label class="text-lg w-1/2 block" for="information">課外活動・事業紹介</label>
