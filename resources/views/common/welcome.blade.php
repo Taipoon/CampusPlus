@@ -35,7 +35,7 @@
             <img src="{{ asset('images/title-side-mark.png') }}" class="inline-block w-4">
             メールアドレス</label>
 
-          <input type="email" id="email" name="email" autofocus
+          <input type="email" id="email" name="email" autofocus value="{{ old('email') }}"
             class="border-gray-300 focus:outline-none focus:border-focused-input-field-outline bg-input-field w-full">
         </div>
         {{-- Password --}}
@@ -48,7 +48,7 @@
         </div>
         {{-- Login Button --}}
         <div class="my-2">
-          <button class="bg-primary-button text-primary-button py-2 px-8 hover:bg-hoverd-login-button rounded-sm"
+          <button class="bg-primary-button text-primary-button py-2 px-8 hover:bg-hoverd-login-button rounded-md"
             class="submit">ログイン</button>
         </div>
 

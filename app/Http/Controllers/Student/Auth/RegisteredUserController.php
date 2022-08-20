@@ -39,8 +39,8 @@ class RegisteredUserController extends Controller
       'first_name' => ['required', 'string', 'max:20'],
       'last_name_kana' => ['required', 'string', 'max:20'],
       'first_name_kana' => ['required', 'string', 'max:20'],
-      # 'email' => ['required', 'string', 'email', 'max:100', 'regex:/[1-3]012\w0([0-7][0-9]|80)@kaishi-pu.ac.jp/', 'unique:students'],
-      'email' => ['required', 'string', 'email', 'max:100', 'unique:students'],
+      'email' => ['required', 'string', 'email', 'max:100', 'regex:/[1-3]012[0-3]0([0-7][0-9]|80)@kaishi-pu.ac.jp/', 'unique:students'],
+      # 'email' => ['required', 'string', 'email', 'max:100', 'unique:students'],
       'password' => ['required', 'confirmed', Rules\Password::defaults()],
     ]);
 
@@ -55,9 +55,6 @@ class RegisteredUserController extends Controller
     } else if ($student_number[0] === "3") {
       $faculty = CommonConstants::ANIME;
     }
-
-    // API実習提出時はすべて情報学部
-    $faculty = CommonConstants::ICT;
 
     $user = Student::create([
       'last_name' => $request->last_name,

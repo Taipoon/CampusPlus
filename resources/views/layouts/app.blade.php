@@ -186,7 +186,7 @@
     <footer class="bg-footer text-white">
       <div class="py-12 w-9/12 xl:w-8/12 mx-auto">
         <p class="my-4">開志専門職大学 電子掲示板システム </p>
-        <p><small>Copyright &copy; 2021 Taiki Hirayama All Rights Reserved.</small></p>
+        <p><small>Copyright &copy; 2021 Taiki Hirayama(<span><a href="mailto:20120065@kaishi-pu.ac.jp">20120065@kaishi-pu.ac.jp</a></span>) All Rights Reserved.</small></p>        
       </div>
     </footer>
   </div>
