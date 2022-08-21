@@ -14,13 +14,14 @@
           <div id="input-field" class="p-4 bg-white border border-gray-200">
             {{-- Validation Errors --}}
             <x-validation-errors />
-            <input type="text" placeholder="タイトルを入力" max="40" name="title" value="{{ old('title') }}"
+            <input type="text" placeholder="タイトルを入力" name="title" value="{{ old('title') ?? ""}}" id="title" 
+            oninput="strCount('#title', 100)"
               class="bg-input-field py-2 w-full border border-gray-500 shadow-inner focus:outline-none block" autofocus>
-            <span class="text-sm text-gray-700">最大40文字で入力してください。</span>
-            <textarea name="text"
-              class="bg-input-field h-40 py-2 mt-8 w-full border border-gray-500 shadow-inner focus:outline-none block"
+            <span class="text-sm text-gray-700">最大100文字で入力してください。<span id="titleStrLength"></span> </span>
+            <textarea name="text" id="text" oninput="strCount('#text', 2000)" 
+            class="bg-input-field h-40 py-2 mt-8 w-full border border-gray-500 shadow-inner focus:outline-none block"
               placeholder="コメントを入力">{{ old('text') }}</textarea>
-            <span class="text-sm text-gray-700">最大700文字で入力してください。</span>
+            <span class="text-sm text-gray-700">最大2000文字で入力してください。<span id="textStrLength"></span></span>
             <div class="lg:flex justify-start lg:space-x-8 my-8 px-4">
               <div>
                 <label for="category" class="w-full inline-block font-semibold text-lg">カテゴリ</label>

@@ -150,19 +150,4 @@
       </div>
     </div>
   </div>
-  <script>
-    function strCount(selectorId, maxLength) {
-        const length = document.querySelector(selectorId).value.length;      
-        const remainingLength = maxLength - length;
-
-        const strLengthLabel = document.querySelector(`${selectorId}StrLength`);
-        if (remainingLength < 0) {
-          strLengthLabel.innerHTML = `<span class="text-red-500 font-bold">${maxLength}</span>文字以内で入力してください。<br />現在${length - maxLength}文字超過しています。`;
-        } else {
-          strLengthLabel.innerHTML = `あと<span class="text-blue-500 font-bold">${remainingLength}</span>文字入力できます。`;
-        }
-      }
-      strCount("#profile", 1000)
-      strCount("#information", 2000);
-  </script>
 @endsection

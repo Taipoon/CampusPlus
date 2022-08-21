@@ -22,8 +22,8 @@ class CommentController extends Controller
   {
     // 新規にコメントを投稿する
     $request->validate([
-      'text' => 'required|string|max:700',
-      'image' => 'image|mimes:jpg,jpeg,png|max:2048',
+      'text' => 'required|string|max:2000',
+      'image' => 'image|mimes:jpg,jpeg,png|max:10240',
     ]);
     // 文頭・文末の全角スペースを含んだ空白文字を削除
     $parsedText = CommonConstants::mbTrim($request->text);
@@ -81,6 +81,11 @@ class CommentController extends Controller
 
   public function storeReply(Request $request)
   {
+    $request->validate([
+      'text' => 'required|string|max:2000',
+      'image' => 'image|mimes:jpg,jpeg,png|max:10240',
+    ]);
+
     $user_id = Auth::id();
     $reply_to_comment = Comment::findOrFail($request->route()->parameter('comment'));
     try {

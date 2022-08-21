@@ -56,10 +56,12 @@
         @csrf
         <div id="input-field" class="p-4 bg-white">
           {{-- Validation Errors --}}
-          <x-validation-errors />
-          <textarea name="text" autofocus
+          <x-validation-errors />      
+          <span class="text-gray-700 text-sm">最大2000文字まで入力できます。</span>    
+          <textarea name="text" autofocus id="text" oninput="strCount('#text', 2000)"
             class="bg-input-field h-40 py-2 w-full border border-gray-500 shadow-inner focus:outline-none block"
-            placeholder="コメントへの返信を入力">{{ old('text') }}</textarea>
+            placeholder="コメントへの返信を入力">{{ old('text') }}</textarea>                      
+            <div id="textStrLength"></div>
           <div class="text-center md:flex justify-around items-center my-4">
             <input type="file" id="image" name="image" accept=".jpg,.png">
             <button

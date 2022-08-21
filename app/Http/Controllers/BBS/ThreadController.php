@@ -108,12 +108,12 @@ class ThreadController extends Controller
 
     // 新規スレッド作成
     $request->validate([
-      'title' => 'required|string|max:40',
-      'text' => 'required|string|max:700',
+      'title' => 'required|string|max:100',
+      'text' => 'required|string|max:2000',
       'category' => 'required|numeric',
       'request_for_answer' => 'nullable|boolean',
       'is_anonymous' => 'nullable|boolean',
-      'image' => 'image|mimes:jpg,jpeg,png|max:2048',
+      'image' => 'image|mimes:jpg,jpeg,png|max:10240',
     ]);
     if ($request->request_for_answer === 1) {
       $status = CommonConstants::REQUEST_FOR_ANSWER;

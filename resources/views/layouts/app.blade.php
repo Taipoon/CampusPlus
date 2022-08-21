@@ -244,6 +244,21 @@
       </div>
     </footer>
   </div>
+  <script>
+    function strCount(selectorId, maxLength) {
+        // 入力した文字数
+        const length = document.querySelector(selectorId).value.length;
+        // 入力可能な残りの文字数
+        const remainingLength = maxLength - length;
+        // 文字数を表示
+        const strLengthLabel = document.querySelector(`${selectorId}StrLength`);
+        if (remainingLength < 0) {
+          strLengthLabel.innerHTML = `現在<span class="text-red-500 font-bold">${length - maxLength}</span>文字超過しています。`;
+        } else {
+          strLengthLabel.innerHTML = `あと<span class="text-blue-500 font-bold">${remainingLength}</span>文字入力できます。`;
+        }
+      }
+  </script>
 </body>
 
 </html>
