@@ -32,11 +32,11 @@
             @if ($student->id === Auth::id())
               <a href="{{ route('student.accounts.edit', ['student' => $student->id]) }}"
                 class="pl-8 text-sm text-gray-500 hover:text-gray-800 underline">プロフィールを編集する</a>
-            @endif
             <a href="{{ route('student.notification', ['student' => Auth::id()]) }}"
               class="text-sm text-gray-500 hover:text-gray-800 underline">通知</a>
             <a href="{{ route('student.showToken', ['student' => $student->id]) }}"
               class="text-sm text-gray-500 hover:text-gray-800 underline">APIの利用</a>
+            @endif
           </div>
           <div class="w-full pl-12 text-3xl mt-4 mb-2">
             <ruby>{{ $student->last_name }}<rt>{{ $student->last_name_kana }}</rt> {{ $student->first_name }}<rt>
