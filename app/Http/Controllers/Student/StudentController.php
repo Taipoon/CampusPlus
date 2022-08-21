@@ -57,16 +57,17 @@ class StudentController extends Controller
       ]);
       $student->password = Hash::make($request->new_password);
     }
+
     $request->validate([
-      'profile' => 'nullable|max:100',
-      'profile_image' => 'nullable|image|mimes:png,jpg|max:2048',
-      'icon_image' => 'nullable|image|mimes:png,jpg|max:2048',
+      'profile' => 'nullable|max:1000',
+      'profile_image' => 'nullable|image|mimes:png,jpg|max:10240',
+      'icon_image' => 'nullable|image|mimes:png,jpg|max:10240',
       'twitter' => 'nullable|active_url|max:255',
       'github' => 'nullable|active_url|max:255',
       'instagram' => 'nullable|active_url|max:255',
       'youtube' => 'nullable|active_url|max:255',
       'url' => 'nullable|active_url',
-      'information' => 'nullable|max:200',
+      'information' => 'nullable|max:2000',
     ]);
 
     // プロフィール画像(16:9)を public/storage/students/profiles に保存してファイル名をDBへ保存

@@ -172,10 +172,10 @@
         <div id="input-field" class="p-4 bg-white">
           {{-- Validation Errors --}}
           <x-validation-errors />
-          <textarea name="text"
+          <textarea name="text" id="text" oninput="strCount('#text', 2000)"
             class="bg-input-field h-40 py-2 w-full border border-gray-500 shadow-inner focus:outline-none block"
             placeholder="コメントを入力">{{ old('text') }}</textarea>
-          <span class="text-gray-700 text-sm">最大700文字で入力してください。</span>
+          <span class="text-gray-700 text-sm" id="textStrLength">最大2000文字で入力してください。</span>
           <div class="text-center md:flex justify-around items-center my-4">
             <input type="file" name="image" id="image" accept=".jpg,.png">
             <button type="submit"

@@ -77,10 +77,11 @@
               <input type="password" class="w-1/2 bg-input-field border border-gray-500 shadow-inner focus:outline-none"
                 id="new_password_confirmation" name="new_password_confirmation">
             </div>
-            <h2 class="text-xl font-semibold mt-8">自己紹介<span class="ml-4 text-sm text-gray-700">最大100文字まで。</span></h2>
+            <h2 class="text-xl font-semibold mt-8">自己紹介<span class="ml-4 text-sm text-gray-700">最大1000文字まで入力できます。</span></h2>
             <div class="h-2 mb-4 border-t-2 border-separator"></div>
-            <textarea name="profile" max="100"
+            <textarea name="profile" oninput="strCount('#profile', 1000)" id="profile" maxlength="1000"
               class="h-36 w-3/4 mx-auto bg-input-field shadow-inner block border border-gray-500 focus:outline-none">{{ old('profile') ?? $student->profile }}</textarea>
+            <div class="text-right w-3/4 mx-auto" id="profileStrLength"></div>
             <h2 class="text-xl font-semibold mt-8">プロフィール画像</h2>
             <span class="text-sm text-gray-500">「マイページ」で表示されるプロフィール画像です。16 : 9に自動的にリサイズされます。</span>
             <div class="h-2 mb-4 border-t-2 border-separator"></div>
@@ -132,10 +133,12 @@
                 value="{{ old('url') ?? $student->url }}" id="url" name="url">
             </div>
             <div class="flex mb-4">
-              <label class="text-lg w-1/2 block" for="information">課外活動・事業紹介</label>
-              <textarea class="w-1/2 bg-input-field border border-gray-500 shadow-inner focus:outline-none"
-                id="information" name="information">{{ old('information') ?? $student->information }}</textarea>
+              <label class="text-lg w-1/2 block" for="information">課外活動・事業紹介<br /><span class="text-sm text-gray-700">最大2000文字まで入力できます。</span></label>
+              <textarea oninput="strCount('#information', 2000)" class="w-1/2 bg-input-field border border-gray-500 shadow-inner focus:outline-none"
+                id="information" name="information" maxlength="2000">{{ old('information') ?? $student->information }}</textarea>
+                
             </div>
+            <div class="text-right" id="informationStrLength"></div>
             <div class="w-full text-center">
               {{-- Information Save Button --}}
               <button type="submit"
